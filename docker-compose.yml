@@ -1,0 +1,12 @@
+jackett:
+  image: jbogatay/jackett
+  restart: unless-stopped
+  ports:
+    - "9117:9117"
+  container_name: jackett
+  environment:
+    - PUID=1001
+    - PGID=1001
+    - TZ=America/Detroit
+  volumes:
+    - /home/media/.config/jackett:/config
